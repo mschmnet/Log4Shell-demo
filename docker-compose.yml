@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  ldap-server:
+    image: mschmnet/marshalsec
+    build: ./marshalsec  
+    ports:
+      - "1389:1389"
