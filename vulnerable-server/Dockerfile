@@ -1,0 +1,12 @@
+FROM maven:3.3-jdk-8 as build
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+RUN mvn package -DskipTests
+
+FROM adoptopenjdk/openjdk8:x86_64-alpine-jdk8u312-b07-slim
+
+EXPOSE 8080
+
+COPY --from=build /app/target/*.jar /app/app.jar
+CMD java -jar /app/app.jar
