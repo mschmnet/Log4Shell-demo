@@ -2,6 +2,6 @@ version: "3.9"
 services:
   vulnerable-server:
     image: mschmnet/log4shell-vulnerable-server
-    build: .  
+    build: . 
     ports:
       - "80:8080"

@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 RUN mvn package -DskipTests
 
-FROM adoptopenjdk/openjdk8:x86_64-alpine-jdk8u312-b07-slim
+FROM openjdk:8u181-jre-alpine
 
 EXPOSE 8080
 
