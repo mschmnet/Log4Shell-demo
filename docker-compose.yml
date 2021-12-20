@@ -2,6 +2,14 @@ version: "3.9"
 services:
   ldap-server:
     image: mschmnet/marshalsec
-    build: ./marshalsec  
+    build:   
+      context: ./marshalsec
+      args:
+        CODEBASE_URL: 164.90.226.186 
     ports:
       - "1389:1389"
+  codebase:
+    image: mschmnet/log4shell-codebase
+    build: ./codebase
+    ports:
+      - "8888:8888"
