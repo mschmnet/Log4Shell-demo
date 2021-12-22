@@ -15,14 +15,14 @@ If you haven't already, here are the steps to install Docker on a Debian VM. You
 ## Download the repository
 
 ```
-    git clone git@github.com:mschmnet/Log4Shell-demo.git 
+git clone git@github.com:mschmnet/Log4Shell-demo.git 
 ```
 
 ## Install vulnerable server
 
 ```
-    cd vulnerable-server
-    ../make.sh run # Or you coud execute make run if you hade Make and Docker Compose installed
+cd vulnerable-server
+../make.sh run # Or you coud execute make run if you hade Make and Docker Compose installed
 ```
 
 ## Start malicious server.
@@ -32,18 +32,18 @@ This will start a basic LDAP server and basic Python server to serve the malicio
 You need to provide the IP address or domain name where these servers will be available
 
 ```
-    cd malicious-server
+cd malicious-server
     ../make.sh run CODEBASE_URL=SERVER_IP_OR_DOMAIN_NAME # Optionally make instead of ../make.sh if you had Make and Docker Compose installed
 ``` 
 
 ## How to stop any of them
 
 ```
-   ../make.sh stop
+../make.sh stop
 ```
 
 ## How to show the logs 
 
 ```
-   ../make.sh logs 
+../make.sh logs 
 ```
