@@ -25,7 +25,7 @@ cd vulnerable-server
 ../make.sh run # Or you coud execute make run if you hade Make and Docker Compose installed
 ```
 
-## Start malicious server.
+## Start malicious server
 
 This will start a basic LDAP server and basic Python server to serve the malicious Java classes.
 
