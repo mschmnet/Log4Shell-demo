@@ -33,7 +33,7 @@ You need to provide the IP address or domain name where these servers will be av
 
 ```
 cd malicious-server
-    ../make.sh run CODEBASE_URL=SERVER_IP_OR_DOMAIN_NAME # Optionally make instead of ../make.sh if you had Make and Docker Compose installed
+../make.sh run CODEBASE_URL=SERVER_IP_OR_DOMAIN_NAME # Optionally make instead of ../make.sh if you had Make and Docker Compose installed
 ``` 
 
 ## How to stop any of them
